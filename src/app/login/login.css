@@ -1,0 +1,6 @@
+@media (max-width: 576px) {
+  .login-box .row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
