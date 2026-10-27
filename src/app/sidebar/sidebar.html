@@ -37,13 +37,13 @@
                 </a>
                 <ul class="nav nav-treeview" style="display: block;">
                   <li class="nav-item">
-                    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="nav-link" {{ modulename == 'dashboard' ? 'active' : '' }}>
+                    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="nav-link" [class.active]="moduleName == 'dashboard'">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v1</p>
                     </a>
-                  </li>
+                  </li>   
                   <li class="nav-item">
-                    <a [routerLink]="['/dashboard2']" routerLinkActive="active" class="nav-link" {{ modulename == 'dashboard2' ? 'active' : '' }}>
+                    <a [routerLink]="['/dashboard2']" routerLinkActive="active" class="nav-link" [class.active]="moduleName == 'dashboard2'">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard v2</p>
                     </a>
