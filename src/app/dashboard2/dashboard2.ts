@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 
 import { Header } from '../header/header';
 import { Sidebar } from '../sidebar/sidebar';
@@ -11,7 +11,24 @@ import { RouterModule } from '@angular/router';
   styleUrl: './dashboard2.css',
   templateUrl: './dashboard2.html',
 })
-export class Dashboard2 {
+export class Dashboard2 implements OnInit, OnDestroy {
+  private previousTheme: string | null = null;
+
+  ngOnInit() {
+    const root = document.documentElement;
+    this.previousTheme = root.getAttribute('data-bs-theme');
+    root.setAttribute('data-bs-theme', 'light');
+    root.style.colorScheme = 'light';
+  }
+
+  ngOnDestroy() {
+    const root = document.documentElement;
+    if (this.previousTheme) {
+      root.setAttribute('data-bs-theme', this.previousTheme);
+      root.style.colorScheme = this.previousTheme;
+    }
+  }
+
   @HostListener('document:click', ['$event'])
   closeSidebarOnOutsideClick(event: MouseEvent) {
     if (!document.body.classList.contains('sidebar-open')) return;
