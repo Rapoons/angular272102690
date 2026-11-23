@@ -1,0 +1,50 @@
+/* Tampilan halaman Mahasiswa (Tabulator) */
+
+/* Tombol Tambah: selebar layar di HP, normal di layar lebar */
+#tambahButton {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  #tambahButton {
+    width: auto;
+  }
+}
+
+/* Kartu "Data Mahasiswa" */
+.mahasiswa-datatable-card .card-title {
+  color: var(--bs-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* Tabulator dibuat oleh JavaScript, jadi perlu ::ng-deep */
+:host ::ng-deep #tabel-mahasiswa {
+  border: 0;
+  border-radius: 0;
+}
+
+/* Judul kolom berwarna biru */
+:host ::ng-deep #tabel-mahasiswa .tabulator-header,
+:host ::ng-deep #tabel-mahasiswa .tabulator-header .tabulator-col {
+  background-color: var(--bs-primary);
+  color: #fff;
+  font-weight: 700;
+}
+:host ::ng-deep #tabel-mahasiswa .tabulator-header .tabulator-col .tabulator-arrow {
+  border-bottom-color: #fff;
+}
+
+/* Isi detail baris di HP */
+:host ::ng-deep #tabel-mahasiswa .tabulator-responsive-collapse {
+  background-color: var(--bs-primary-bg-subtle);
+}
+:host ::ng-deep #tabel-mahasiswa .tabulator-responsive-collapse table td:first-child {
+  font-weight: 700;
+  white-space: nowrap;
+  padding-right: 0.75rem;
+}
+
+/* Footer halaman di tengah */
+:host ::ng-deep #tabel-mahasiswa .tabulator-footer .tabulator-footer-contents {
+  justify-content: center;
+}

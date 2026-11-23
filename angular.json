@@ -24,31 +24,21 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css",
-              "public/css/adminlte.css",
-              "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
-              "node_modules/datatables.net-responsive-dt/css/responsive.dataTables.min.css"
-            ],
-            "scripts": [
-              "public/js/adminlte.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/dataTables.min.js",
-              "node_modules/datatables.net-responsive/js/dataTables.responsive.min.js"
-            ]
+            "styles": ["src/styles.css", "public/css/adminlte.css"],
+            "scripts": ["public/js/adminlte.js"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4MB",
-                  "maximumError": "5MB"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "10kB",
-                  "maximumError": "20kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all",
