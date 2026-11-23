@@ -9,5 +9,9 @@ import { RouterModule } from '@angular/router';
 })
 export class Sidebar {
   @Input() moduleName: string="";
+
+  get isDashboard(): boolean {
+    return ['dashboard', 'dashboard2', 'dashboard3'].includes(this.moduleName);
+  }
 }
 

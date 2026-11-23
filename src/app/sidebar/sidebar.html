@@ -27,15 +27,15 @@
           <nav class="mt-2" aria-label="Main navigation">
             <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false" id="navigation" tabindex="-1">
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active" aria-expanded="true">
+              <li class="nav-item" [class.menu-open]="isDashboard">
+                <a href="#" class="nav-link" [class.active]="isDashboard" [attr.aria-expanded]="isDashboard">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview" style="display: block;">
+                <ul class="nav nav-treeview" [style.display]="isDashboard ? 'block' : null">
                   <li class="nav-item">
                     <a [routerLink]="['/dashboard']" routerLinkActive="active" class="nav-link" [class.active]="moduleName == 'dashboard'">
                       <i class="nav-icon bi bi-circle"></i>
@@ -69,39 +69,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link" aria-expanded="false">
-                  <i class="nav-icon bi bi-box-seam-fill"></i>
-                  <p>
-                    Widgets
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
+                <a [routerLink]="['/mahasiswa']" routerLinkActive="active" class="nav-link" [class.active]="moduleName == 'mahasiswa'">
+                  <i class="nav-icon bi bi-grid-3x3-gap-fill"></i>
+                  <p>Mahasiswa</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./widgets/small-box.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Small Box</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./widgets/info-box.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>info Box</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./widgets/cards.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Cards</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./widgets/social.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Social &amp; Post</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link" aria-expanded="false">
