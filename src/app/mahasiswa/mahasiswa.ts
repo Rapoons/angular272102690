@@ -11,4 +11,7 @@ import { Footer } from '../footer/footer';
   styleUrl: './mahasiswa.css',
   templateUrl: './mahasiswa.html',
 })
-export class Mahasiswa {}
+export class Mahasiswa {
+  // Diisi pada slide 14 (kirim data ke API tambahMahasiswa.php)
+  postRecord(): void {}
+}
